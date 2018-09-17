@@ -53,5 +53,5 @@ signed main()
   cin >> a >> b >> c >> d;
   comp(a, b);
   comp(c, d);
-  cout << ans << endl;
+  cout << ans;
 }
