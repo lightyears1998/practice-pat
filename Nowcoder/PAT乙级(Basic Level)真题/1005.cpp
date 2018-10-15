@@ -1,4 +1,4 @@
-// WA
+// 德才论
 
 #include <iostream>
 #include <string>
@@ -19,7 +19,7 @@ struct student
 	bool operator < (const student &oth) const
 	{
 		if (type != oth.type) return type > oth.type;
-		if (de+cai != oth.de + oth.cai) return de+cai > oth.de+oth.cai;
+		if (de + cai != oth.de + oth.cai) return de+cai > oth.de+oth.cai;
 		if (de != oth.de) return de > oth.de;
 		return id < oth.id;
 	}
@@ -30,7 +30,7 @@ void judge(student & stu)
 	if (stu.de < L || stu.cai < L) stu.type = 0;
 	else if (stu.de >= H && stu.cai >= H) stu.type = 4;
 	else if (stu.de >= H) stu.type = 3;
-	else if (stu.de > stu.cai) stu.type = 2;
+	else if (stu.de >= stu.cai) stu.type = 2;  // WA1) 不低于即>=
 	else stu.type = 1;
 
 	if (stu.type > 0) ++OK;
